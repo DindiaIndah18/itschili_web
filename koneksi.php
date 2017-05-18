@@ -1,12 +1,12 @@
 <?php
-$host 	="localhost";
-$user	="root";
-$pass	="";
-$db 	="cabai";
+ $DBhost = "localhost";
+ $DBuser = "root";
+ $DBpass = "";
+ $DBname = "sichili";
 
-//koneksi
-mysql_connect($host, $user, $pass) or die (mysql_error());
+$con = mysqli_connect($DBhost,$DBuser,$DBpass,$DBname);
 
-//pilih database
-mysql_select_db($db) or die (mysql_error(). "Database Not Found");
-?>
+    if ($con->connect_errno) {
+        die("ERROR : -> ".$con->connect_error);
+    }
+ ?>

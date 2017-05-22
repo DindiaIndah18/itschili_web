@@ -141,7 +141,7 @@
 	                    <div class="col-md-12">
 	                        <div class="card">
 	                            <div class="card-header" data-background-color="purple">
-	                                <h4 class="title">Tambah Harga Cabai</h4>
+	                                <h4 class="title">Tambah Harga Cabai di Daerahhh</h4>
 	                                <p class="category">Harga Cabai di Berbagai Daerah</p>
 	                            </div>
 	                            <div class="col-md-12">

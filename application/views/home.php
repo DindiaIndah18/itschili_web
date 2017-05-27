@@ -4,7 +4,7 @@ $this->load->view('header');
 
  <div class="wrapper">
 
-     <div class="sidebar" data-color="red" data-image="<?php echo base_url() ?>/../assets/img/sidebar-1.jpg">
+     <div class="sidebar" data-color="red" data-image="<?php echo base_url() ?>/assets/img/sidebar-1.jpg">
      <!--
            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 

@@ -26,7 +26,7 @@ $this->load->view('header');
                  </div>
              </div>
              <ul class="nav">
-                 <li class="active">
+                 <li>
                      <a href="./dashboard.html">
                          <i class="material-icons">dashboard</i>
                          <p>Dashboard</p>
@@ -71,8 +71,8 @@ $this->load->view('header');
                          <p>Berita</p>
                      </a>
                  </li>
-                 <li>
-                     <a href="<?php echo base_url('index.php/itschilli/menuMUser') ?>">
+                 <li class="active">
+                     <a href="./calendar.html">
                          <i class="material-icons">date_range</i>
                          <p>Management User</p>
                      </a>
@@ -109,105 +109,66 @@ $this->load->view('header');
          </nav>
          <div class="content">
              <div class="container-fluid">
-                 <div class="row">
-                          <!-- <div class="col-md-12">
-                         <div class="card card-chart">
-                             <div class="card-header" data-background-color="rose" data-header-animation="true">
-                                 <div class="ct-chart" id="websiteViewsChart"></div>
-                             </div>
-                             <div class="card-content">
-                                 <div class="card-actions">
-                                     <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                         <i class="material-icons">build</i> Fix Header!
-                                     </button>
-                                     <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
-                                         <i class="material-icons">refresh</i>
-                                     </button>
-                                     <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
-                                         <i class="material-icons">edit</i>
-                                     </button>
-                                 </div>
-                                 <h4 class="card-title">Website Views</h4>
-                                 <p class="category">Last Campaign Performance</p>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">access_time</i> campaign sent 2 days ago
-                                 </div>
-                             </div>
-                         </div>
-                 </div> -->
-                 </div>
-                 <div class="row">
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="orange">
-                                 <i class="material-icons">weekend</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Jenis Cabai</p>
-                                 <h3 class="card-title">184</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons text-danger">warning</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="rose">
-                                 <i class="material-icons">equalizer</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Lokasi</p>
-                                 <h3 class="card-title">75.521</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">local_offer</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="green">
-                                 <i class="material-icons">store</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Pasar</p>
-                                 <h3 class="card-title">$34,245</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">date_range</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="blue">
-                                 <i class="fa fa-twitter"></i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">User Terdaftar</p>
-                                 <h3 class="card-title">+245</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">update</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+               <div class="row">
+                      <div class="col-md-12">
+                          <div class="card">
+                              <div class="card-header card-header-icon" data-background-color="purple">
+                                  <i class="material-icons">assignment</i>
+                              </div>
+                              <div class="card-content">
+                                  <h4 class="card-title">User Terdaftar<a href="" class="btn btn-primary btn-simple">Tambah Data</a></h4>
+                                  <div class="toolbar">
+                                      <!--        Here you can write extra buttons/actions for the toolbar              -->
+                                  </div>
+                                  <div class="material-datatables">
+                                      <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                          <thead>
+                                              <tr>
+                                                <th>No</th>
+                                                  <th>Nama</th>
+                                                  <th>Email</th>
+                                                  <th>Nomor</th>
+                                                  <th class="disabled-sorting text-right">Actions</th>
+                                              </tr>
+                                          </thead>
+                                          <tfoot>
+                                              <tr>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                <th>Nomor</th>
+                                                  <th class="text-right">Actions</th>
+                                              </tr>
+                                          </tfoot>
+                                          <tbody>
+                                            <?php
+                                            $hitung=0;
+                                             foreach ($datauser as $data) {
+                                               $hitung++;
+                                             ?>
+                                              <tr>
+                                                  <td><?php echo $hitung; ?></td>
+                                                  <td><?php echo $data->nama;?></td>
+                                                  <td><?php echo $data->email;?></td>
+                                                  <td><?php echo $data->no_telp;?></td>
+                                                  <td class="text-right">
+                                                      <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="material-icons">favorite</i></a>
+                                                      <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="material-icons">dvr</i></a>
+                                                      <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
+                                                  </td>
+                                              </tr>
+                                              <?php } ?>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                              <!-- end content-->
+                          </div>
+                          <!--  end card  -->
+                      </div>
+                      <!-- end col-md-12 -->
+                  </div>
+                  <!-- end row -->
              </div>
          </div>
          <footer class="footer">

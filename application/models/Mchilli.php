@@ -20,6 +20,12 @@ class Mchilli extends CI_Model
   {
     return $this->db->insert($table, $data);
   }
+
+  public function getdata($table)
+  {
+    $hasil = $this->db->get($table);
+    return $hasil->result();
+  }
 }
 
 

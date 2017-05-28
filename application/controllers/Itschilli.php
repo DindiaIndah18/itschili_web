@@ -75,6 +75,13 @@ class Itschilli extends CI_Controller
     }
   }
 
+  public function menuMUser()
+  {
+    $datauser['datauser'] = $this->model->getdata('customer');
+
+    $this->load->view('VMUser', $datauser);
+  }
+
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect('itschilli');

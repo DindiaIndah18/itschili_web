@@ -11,7 +11,7 @@ class Mchilli extends CI_Model
     $this->load->database();
   }
 
-  public function ceklogin($table, $where)
+  public function cekdata($table, $where)
   {
     return $this->db->get_where($table, $where);
   }
@@ -19,6 +19,18 @@ class Mchilli extends CI_Model
   public function inputdata($table, $data)
   {
     return $this->db->insert($table, $data);
+  }
+
+  public function updatedata($table, $data, $where)
+  {
+    $this->db->where($where);
+    return $this->db->update($table, $data);
+  }
+
+  public function deletedata($table, $where)
+  {
+    $this->db->where($where);
+    return $this->db->delete($table);
   }
 
   public function getdata($table)

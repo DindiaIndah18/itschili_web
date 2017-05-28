@@ -35,7 +35,7 @@ class Itschilli extends CI_Controller
       'email' => $email,
       'pass' => md5($password)
       );
-      $cek = $this->Mchilli->ceklogin("customer",$where)->num_rows();
+      $cek = $this->Mchilli->cekdata("customer",$where)->num_rows();
         if($cek > 0){
           $data_session = array(
             'email' => $email,
@@ -81,6 +81,46 @@ class Itschilli extends CI_Controller
 
     $this->load->view('VMUser', $datauser);
   }
+
+  public function menuMUserEdit($id)
+  {
+    $where = array(
+    'id' => $id
+    );
+
+    if (null !== $this->input->post('edit')) {
+      $nama = $this->input->post('nama');
+      $telp = $this->input->post('telp');
+      $email = $this->input->post('email');
+      $password = $this->input->post('password');
+      $data = array(
+      'nama' => $nama,
+      'no_telp' => $telp,
+      'email' => $email,
+      'pass' => md5($password)
+      );
+
+      $hasil = $this->Mchilli->updatedata("customer", $data, $where);
+      if($hasil){
+        redirect('itschilli/menuMUser');
+      }else{
+        echo "Gagal Update!";
+      }
+    }else {
+      $datauser['datauser'] = $this->model->cekdata('customer',$where)->row();
+        //$datauser['datauser'] = $data -> result();
+        $this->load->view('VMUseredit',$datauser);
+    }
+  }
+
+public function delete($id)
+{
+  $where = array(
+  'id' => $id
+  );
+  $hasil = $this->Mchilli->deletedata("customer", $where);
+  redirect($_SERVER['HTTP_REFERER']);
+}
 
 	public function logout(){
 		$this->session->sess_destroy();

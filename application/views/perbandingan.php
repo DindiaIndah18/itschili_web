@@ -145,6 +145,15 @@
 	                                <p class="category">Per Hari</p>
 	                            </div>
 	                            <div class="card-content">
+								<form>
+									<select name="lokasi">
+										<option value="Bondowoso">Bondowoso</option>
+										<option value="Jember">Jember</option>
+										<option value="Solo">Solo</option>
+									</select>
+									<button>Filter</button>
+								</form>
+								
 									<div id="container" style="width: 100%; height: 400px; margin: 0 auto"></div>
 	                            </div>
 	                        </div>

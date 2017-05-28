@@ -9,20 +9,24 @@ $this->load->helper('url');
 }
 
 function index(){
-$data['post'] = $this->modelberita->tampil_data()->result();
+$data['harga'] = $this->modelharga->tampil_data()->result();
 $this->load->view('listharga',$data);
 }
 
 function tambah(){
-$this->load->view('tambahharga');
+	$this->load->model('cabaimodel');
+$data['cabai'] = $this->cabaimodel->tampil_data()->result();
+$this->load->view('tambahharga', $data);
 }
 
 function tambah_harga(){
+$cabai = $this->input->post('cabai');
 $harga = $this->input->post('harga');
 $tanggal = $this->input->post('tanggal');
 $lokasi = $this->input->post('lokasi');
 
 $data = array(
+'id_cabai' => $cabai,
 'harga' => $harga,
 'tanggal' => $tanggal, 
 'lokasi' => $lokasi
@@ -39,6 +43,8 @@ redirect('harga/index');
 }
 
 function edit($id_harga){
+		$this->load->model('cabaimodel');
+$data['cabai'] = $this->cabaimodel->tampil_data()->result();
 $where = array('id_harga' => $id_harga);
 $data['harga'] = $this->modelharga->edit_data($where,'harga')->result();
 $this->load->view('editharga',$data);
@@ -46,12 +52,13 @@ $this->load->view('editharga',$data);
 
 function update(){
 $id_harga = $this->input->post('id_harga');
-$id_cabai = $this->input->post('id_cabai');
+$id_cabai = $this->input->post('cabai');
 $harga = $this->input->post('harga');
 $tanggal = $this->input->post('tanggal');
 $lokasi = $this->input->post('lokasi');
 
 $data = array(
+'id_cabai' => $id_cabai,
 'harga' => $harga,
 'tanggal' => $tanggal,
 'lokasi' => $lokasi

@@ -151,6 +151,21 @@
 									
 									
                                     <div class="card-content">
+										<div class="row">
+                                            <label class="col-sm-2 label-on-left">Cabai</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-group label-floating is-empty" style="margin: 15px 0 0 0">
+                                                    <label class="control-label"></label>
+													<select class="form-control" name='cabai'>
+														<?php
+															foreach($cabai as $c) {
+																echo "<option value='$c->id_cabai'>$c->nama</option>";
+															}
+														?>
+													</select>
+                                                <span class="material-input"></span></div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <label class="col-sm-2 label-on-left">Harga</label>
                                             <div class="col-sm-10">

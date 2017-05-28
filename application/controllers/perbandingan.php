@@ -5,8 +5,10 @@ class perbandingan extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('cabaimodel');
+		
+		$lokasi = isset($_GET['lokasi']) ? $_GET['lokasi'] : '';
 	
-		$data = $this->cabaimodel->get_perbandingan_cabai();
+		$data = $this->cabaimodel->get_perbandingan_cabai($lokasi);
 		$datas = [['name' => 'Cabai Merah', 'data' => []], ['name' => 'Cabai Hijau', 'data' => []]];
 		$tgl = [];
 		

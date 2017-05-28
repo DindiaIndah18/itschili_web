@@ -64,13 +64,13 @@
 	                        <p>Harga Pasar</p>
 	                    </a>
 	                </li>
-	                <li>
+	                <li class="active">
 	                    <a href="<?php echo base_url() ?>index.php/perbandingan/">
 	                        <i class="material-icons">library_books</i>
 	                        <p>Perbandingan</p>
 	                    </a>
 	                </li>
-	                <li class="active">
+	                <li >
 	                    <a href="<?php echo base_url() ?>index.php/berita/">
 	                        <i class="material-icons">bubble_chart</i>
 	                        <p>Berita</p>
@@ -147,7 +147,7 @@
 	                            <div class="card-content table-responsive">
 								<div class='clearfix'>
 											<div class='pull-right'>
-												<a href='tambah'><button class="btn btn-primary btn-fill">Tambah</button></a>
+												<a href='<?php echo base_url() ?>index.php/harga/tambah'><button class="btn btn-primary btn-fill">Tambah</button></a>
 											</div>
 										</div>
 	                                <table class="table">
@@ -165,12 +165,12 @@ foreach($harga as $h){
 ?>
 <tr>
 <td><?php echo $no++ ?></td>
-<td><?php echo $h->Harga ?></td>
-<td><?php echo $h->Tanggal ?></td>
-<td><?php echo $h->Lokasi ?></td>
+<td><?php echo $h->harga ?></td>
+<td><?php echo $h->tanggal ?></td>
+<td><?php echo $h->lokasi ?></td>
 <td>
-<?php echo anchor('harga/edit/'.$h->id_post,'Edit'); ?>
-	<?php echo anchor('harga/hapus/'.$h->id_post,'Hapus'); ?>
+<?php echo anchor('harga/edit/'.$h->id_harga,'Edit'); ?>
+	<?php echo anchor('harga/hapus/'.$h->id_harga,'Hapus'); ?>
 </td>
 </tr>
 <?php } ?>

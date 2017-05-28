@@ -146,12 +146,27 @@
 	                            </div>
 	                            <div class="col-md-12">
                             <div class="card">
-								<?php foreach($post as $u){ ?>
+								<?php foreach($harga as $h){ ?>
                                 <form action="<?php echo base_url().'index.php/harga/update'; ?>" method="post" class="form-horizontal">
 									<input type="hidden" name="id_harga" value="<?php echo $h->id_harga ?>">
 									<input type="hidden" name="id_cabai" value="<?php echo $h->id_cabai ?>">
 									
                                     <div class="card-content">
+									<div class="row">
+                                            <label class="col-sm-2 label-on-left">Cabai</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-group label-floating is-empty" style="margin: 15px 0 0 0">
+                                                    <label class="control-label"></label>
+													<select class="form-control" name='cabai'>
+														<?php
+															foreach($cabai as $c) {
+																echo "<option value='$c->id_cabai'>$c->nama</option>";
+															}
+														?>
+													</select>
+                                                <span class="material-input"></span></div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <label class="col-sm-2 label-on-left">Harga</label>
                                             <div class="col-sm-10">
@@ -167,7 +182,7 @@
                                             <div class="col-sm-10">
                                                 <div class="form-group label-floating is-empty" style="margin: 15px 0 0 0">
                                                     <label class="control-label"></label>
-                                                    <input type = "date" class="form-control" rows="10" name="isi"><?php echo $h->harga ?>
+                                                    <input type = "date" class="form-control" rows="10" name="tanggal">
 													<span class="help-block">Silahkan pilih tanggal</span>
                                                 <span class="material-input"></span></div>
                                             </div>

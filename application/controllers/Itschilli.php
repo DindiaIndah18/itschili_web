@@ -122,6 +122,45 @@ public function delete($id)
   redirect($_SERVER['HTTP_REFERER']);
 }
 
+public function menuBerita()
+{
+  $datauser['databerita'] = $this->model->getdata('berita');
+  $this->load->view('VBerita',$datauser);
+}
+
+public function menuBeritaedit($idberita)
+{
+  $where = array(
+  'idberita' => $idberita
+  );
+
+  if (null !== $this->input->post('edit')) {
+    $judulBerita = $this->input->post('judulBerita');
+    $deskBerita = $this->input->post('deskBerita');
+    $date = $this->input->post('date');
+    $link = $this->input->post('link');
+    $image = $this->input->post('image');
+    $data = array(
+    'judulBerita' => $judulBerita,
+    'deskBerita' => $deskBerita,
+    'date' => $date,
+    'link' => $link,
+    'image' => $image,
+    );
+
+    $hasil = $this->Mchilli->updatedata("berita", $data, $where);
+    if($hasil){
+      redirect('itschilli/menuBerita');
+    }else{
+      echo "Gagal Update!";
+    }
+  }else {
+    $databerita['databerita'] = $this->model->cekdata('berita',$where)->row();
+      //$datauser['datauser'] = $data -> result();
+      $this->load->view('VBeritaedit',$databerita);
+  }
+}
+
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect('itschilli');

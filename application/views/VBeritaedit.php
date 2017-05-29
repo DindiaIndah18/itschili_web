@@ -26,7 +26,7 @@ $this->load->view('header');
                  </div>
              </div>
              <ul class="nav">
-                 <li class="active">
+                 <li>
                      <a href="./dashboard.html">
                          <i class="material-icons">dashboard</i>
                          <p>Dashboard</p>
@@ -65,14 +65,14 @@ $this->load->view('header');
                          <p>Grafik Perkembangan</p>
                      </a>
                  </li>
-                 <li>
-                     <a href="<?php echo base_url('index.php/itschilli/menuBerita') ?>">
+                 <li class="active">
+                     <a href="./calendar.html">
                          <i class="material-icons">date_range</i>
                          <p>Berita</p>
                      </a>
                  </li>
                  <li>
-                     <a href="<?php echo base_url('index.php/itschilli/menuMUser') ?>">
+                     <a href="./calendar.html">
                          <i class="material-icons">date_range</i>
                          <p>Management User</p>
                      </a>
@@ -109,105 +109,49 @@ $this->load->view('header');
          </nav>
          <div class="content">
              <div class="container-fluid">
-                 <div class="row">
-                          <!-- <div class="col-md-12">
-                         <div class="card card-chart">
-                             <div class="card-header" data-background-color="rose" data-header-animation="true">
-                                 <div class="ct-chart" id="websiteViewsChart"></div>
-                             </div>
-                             <div class="card-content">
-                                 <div class="card-actions">
-                                     <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                         <i class="material-icons">build</i> Fix Header!
-                                     </button>
-                                     <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
-                                         <i class="material-icons">refresh</i>
-                                     </button>
-                                     <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
-                                         <i class="material-icons">edit</i>
-                                     </button>
+               <div class="row">
+                 <div class="col-md-6">
+                       <div class="card">
+                           <div class="card-header card-header-icon" data-background-color="rose">
+                               <i class="material-icons">mail_outline</i>
+                           </div>
+                           <div class="card-content">
+                               <h4 class="card-title">Edit Berita</h4>
+                               <form method="post" action="<?php echo base_url('index.php/itschilli/menuBeritaedit/'.$databerita->idberita); ?>">
+
+                                 <div class="form-group label-floating">
+                                     <label class="control-label">Id Berita</label>
+                                     <input type="text" class="form-control" disabled="" value="<?php echo $databerita->idberita; ?>">
                                  </div>
-                                 <h4 class="card-title">Website Views</h4>
-                                 <p class="category">Last Campaign Performance</p>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">access_time</i> campaign sent 2 days ago
+                                 <div class="form-group label-floating">
+                                     <label class="control-label">Judul</label>
+                                     <input type="text" class="form-control" value="<?php echo $databerita->judulBerita; ?>" name="judulBerita">
                                  </div>
-                             </div>
-                         </div>
-                 </div> -->
-                 </div>
-                 <div class="row">
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="orange">
-                                 <i class="material-icons">weekend</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Jenis Cabai</p>
-                                 <h3 class="card-title">184</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons text-danger">warning</i>
-                                     <a href="#pablo"> Lihat data...</a>
+                                 <div class="form-group label-floating">
+                                     <label class="control-label">Deskripsi</label>
+                                     <input type="text" class="form-control" value="<?php echo $databerita->deskBerita; ?>" name="deskBerita">
                                  </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="rose">
-                                 <i class="material-icons">equalizer</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Lokasi</p>
-                                 <h3 class="card-title">75.521</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">local_offer</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="green">
-                                 <i class="material-icons">store</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Pasar</p>
-                                 <h3 class="card-title">$34,245</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">date_range</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="blue">
-                                 <i class="fa fa-twitter"></i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">User Terdaftar</p>
-                                 <h3 class="card-title">+245</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">update</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                                   <div class="form-group label-floating">
+                                       <label class="control-label">Tanggal Terbit</label>
+                                       <input type="text" class="form-control" value="<?php echo $databerita->date; ?>" name="date">
+                                   </div>
+                                   <div class="form-group label-floating">
+                                       <label class="control-label">Link</label>
+                                       <input type="text" class="form-control" value="<?php echo $databerita->link; ?>" name="link">
+                                   </div>
+                                   <div class="form-group label-floating">
+                                       <label class="control-label">Gambar</label>
+                                       <input type="text" class="form-control" value="<?php echo $databerita->image; ?>" name="image">
+                                   </div>
+                                   <button type="submit" class="btn btn-fill btn-success" name="edit">Update</button>
+                                   <a class="btn btn-fill btn-rose" onclick="window.history.go(-1); return false;">Batal</a>
+                               </form>
+                           </div>
+                       </div>
+                   </div>
+                      <!-- end col-md-12 -->
+                  </div>
+                  <!-- end row -->
              </div>
          </div>
          <footer class="footer">

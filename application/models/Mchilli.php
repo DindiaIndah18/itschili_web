@@ -38,6 +38,24 @@ class Mchilli extends CI_Model
     $hasil = $this->db->get($table);
     return $hasil->result();
   }
+  
+  public function gabungdata($id){
+	    $this->db->select('*');
+            $this->db->from('jenis j'); 
+            $this->db->join('harga h', 'h.id_jenis=j.id_jenis', 'left');
+            $this->db->join('pasar p', 'p.id_pasar=h.id_pasar', 'left');
+            $this->db->where('p.id_pasar',$id);
+            $this->db->order_by('h.tgl','asc');         
+            $query = $this->db->get(); 
+            if($query->num_rows() != 0)
+            {
+                return $query->result_array();
+            }
+            else
+            {
+                return false;
+            }
+  }
 }
 
 

@@ -166,5 +166,42 @@ public function menuBeritaedit($idberita)
 		redirect('itschilli');
 	}
 
+  public function menuPerkembangan()
+  {
+    $lokasi = isset($_GET['lokasi']) ? $_GET['lokasi'] : '1';
+
+    $datalokasi['hasil'] = $this->model->gabungdata($lokasi);
+
+    if ($datalokasi['hasil']<>null) {
+      foreach($datalokasi['hasil'] as $d) {
+        $tgl[] = $d['tgl'];
+        $name[] = $d['nama_jenis'];
+      }
+        foreach($datalokasi['hasil'] as $d) {
+          if($d['nama_jenis'] == $name[0]) {
+            $datas[0]['name'] = $name[0];
+            $datas[0]['data'][] = intval($d['harga']);
+          }
+          else if($d['nama_jenis'] == $name[1]) {
+            $datas[1]['name'] = $name[1];
+            $datas[1]['data'][] = intval($d['harga']);
+          }else if($d['nama_jenis'] == $name[2]) {
+            $datas[2]['name'] = $name[2];
+            $datas[2]['data'][] = intval($d['harga']);
+          }
+
+          if(!in_array($d['tgl'], $tgl)) {
+            $tgl[] = $d['tgl'];
+          }
+
+        }
+        $datalokasi['tgl'] = json_encode($tgl);
+        $datalokasi['datas'] = json_encode($datas);
+    }
+
+    $datalokasi['datalokasi'] = $this->model->getdata('pasar');
+
+    $this->load->view('Vperkembangan', $datalokasi);
+  }
 }
  ?>

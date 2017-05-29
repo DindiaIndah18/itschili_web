@@ -1,1 +1,1 @@
-<?php echo var_dump($datas); ?>
+<?php echo $datas; ?>

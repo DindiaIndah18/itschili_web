@@ -21,7 +21,7 @@ $this->load->view('header');
                  </div>
              </div>
              <ul class="nav">
-                 <li class="active">
+                 <li>
                      <a href="./dashboard.html">
                          <i class="material-icons">dashboard</i>
                          <p>Dashboard</p>
@@ -54,7 +54,7 @@ $this->load->view('header');
                          <p>Update Harga</p>
                      </a>
                  </li>
-                 <li>
+                 <li class="active">
                      <a href="<?php echo base_url('index.php/itschilli/menuPerkembangan') ?>">
                          <i class="material-icons">timeline</i>
                          <p>Grafik Perkembangan</p>
@@ -104,105 +104,35 @@ $this->load->view('header');
          </nav>
          <div class="content">
              <div class="container-fluid">
-                 <div class="row">
-                          <!-- <div class="col-md-12">
-                         <div class="card card-chart">
-                             <div class="card-header" data-background-color="rose" data-header-animation="true">
-                                 <div class="ct-chart" id="websiteViewsChart"></div>
-                             </div>
-                             <div class="card-content">
-                                 <div class="card-actions">
-                                     <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                         <i class="material-icons">build</i> Fix Header!
-                                     </button>
-                                     <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
-                                         <i class="material-icons">refresh</i>
-                                     </button>
-                                     <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
-                                         <i class="material-icons">edit</i>
-                                     </button>
-                                 </div>
-                                 <h4 class="card-title">Website Views</h4>
-                                 <p class="category">Last Campaign Performance</p>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">access_time</i> campaign sent 2 days ago
-                                 </div>
-                             </div>
-                         </div>
-                 </div> -->
-                 </div>
-                 <div class="row">
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="orange">
-                                 <i class="material-icons">art_track</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Jenis Cabai</p>
-                                 <h3 class="card-title">5</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons text-danger">art_track</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="rose">
-                                 <i class="material-icons">location_on</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Lokasi</p>
-                                 <h3 class="card-title">5</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">location_on</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="green">
-                                 <i class="material-icons">store</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">Pasar</p>
-                                 <h3 class="card-title">$34,245</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">store</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                         <div class="card card-stats">
-                             <div class="card-header" data-background-color="blue">
-                                 <i class="material-icons">account_box</i>
-                             </div>
-                             <div class="card-content">
-                                 <p class="category">User Terdaftar</p>
-                                 <h3 class="card-title">+245</h3>
-                             </div>
-                             <div class="card-footer">
-                                 <div class="stats">
-                                     <i class="material-icons">account_box</i>
-                                     <a href="#pablo"> Lihat data...</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+               <div class="row">
+                      <div class="col-md-12">
+                          <div class="card">
+                              <div class="card-header card-header-icon" data-background-color="blue">
+                                  <i class="material-icons">timeline</i>
+                              </div>
+                              <div class="card-content">
+                                  <h4 class="card-title">Grafik Perkembangan Harga Cabai
+                                  </h4>
+                              </div>
+                              <form>
+                              <div class="col-md-4">
+                                <select class="selectpicker" data-style="btn btn-primary btn-round" name="lokasi">
+                                  <?php
+
+                                   foreach ($datalokasi as $data) {
+                                   ?>
+                                    <option value="<?php echo $data->id_pasar; ?>"><?php echo $data->nama_pasar." - ". $data->nama_lokasi; ?></option>
+                                    <?php } ?>
+                                </select>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Filter</button>
+                            </form>
+                              <div class="card-content">
+                  						<div id="container" style="width: 100%; height: 400px; margin: 0 auto"></div>
+	                            </div>
+                          </div>
+                      </div>
+                  </div>
              </div>
          </div>
          <footer class="footer">
@@ -242,7 +172,6 @@ $this->load->view('header');
          </footer>
      </div>
  </div>
-
 <?php
      $this->load->view('footer');
 ?>

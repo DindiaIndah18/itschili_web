@@ -3,7 +3,7 @@ $this->load->view('header');
  ?>
 
  <div class="wrapper">
-     <div class="sidebar" data-active-color="rose" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+     <div class="sidebar" data-active-color="rose" data-background-color="white" data-image="<?php echo base_url() ?>assets/img/sidebar-1.jpg">
          <!--
      Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
      Tip 2: you can also add an image using data-image tag
@@ -14,15 +14,10 @@ $this->load->view('header');
                  Its Chilli
              </a>
          </div>
-         <div class="logo logo-mini">
-             <a href="http://www.creative-tim.com" class="simple-text">
-                 IC
-             </a>
-         </div>
          <div class="sidebar-wrapper">
              <div class="user">
                  <div class="photo">
-                     <img src="../assets/img/faces/avatar.jpg" />
+                     <img src="<?php echo base_url() ?>assets/img/logo.png" />
                  </div>
              </div>
              <ul class="nav">
@@ -34,7 +29,7 @@ $this->load->view('header');
                  </li>
                  <li>
                      <a data-toggle="collapse" href="#mapsExamples">
-                         <i class="material-icons">place</i>
+                         <i class="material-icons">data_usage</i>
                          <p>Data Master
                              <b class="caret"></b>
                          </p>
@@ -55,31 +50,31 @@ $this->load->view('header');
                  </li>
                  <li>
                      <a href="./charts.html">
-                         <i class="material-icons">timeline</i>
+                         <i class="material-icons">update</i>
                          <p>Update Harga</p>
                      </a>
                  </li>
                  <li>
                      <a href="./calendar.html">
-                         <i class="material-icons">date_range</i>
+                         <i class="material-icons">timeline</i>
                          <p>Grafik Perkembangan</p>
                      </a>
                  </li>
                  <li>
                      <a href="<?php echo base_url('index.php/itschilli/menuBerita') ?>">
-                         <i class="material-icons">date_range</i>
+                         <i class="material-icons">insert_drive_file</i>
                          <p>Berita</p>
                      </a>
                  </li>
                  <li>
                      <a href="<?php echo base_url('index.php/itschilli/menuMUser') ?>">
-                         <i class="material-icons">date_range</i>
+                         <i class="material-icons">account_box</i>
                          <p>Management User</p>
                      </a>
                  </li>
                  <li>
                      <a href="<?php echo base_url('index.php/itschilli/logout')?>">
-                         <i class="material-icons">widgets</i>
+                         <i class="material-icons">exit_to_app</i>
                          <p>Logout</p>
                      </a>
                  </li>
@@ -142,15 +137,15 @@ $this->load->view('header');
                      <div class="col-lg-3 col-md-6 col-sm-6">
                          <div class="card card-stats">
                              <div class="card-header" data-background-color="orange">
-                                 <i class="material-icons">weekend</i>
+                                 <i class="material-icons">art_track</i>
                              </div>
                              <div class="card-content">
                                  <p class="category">Jenis Cabai</p>
-                                 <h3 class="card-title">184</h3>
+                                 <h3 class="card-title">5</h3>
                              </div>
                              <div class="card-footer">
                                  <div class="stats">
-                                     <i class="material-icons text-danger">warning</i>
+                                     <i class="material-icons text-danger">art_track</i>
                                      <a href="#pablo"> Lihat data...</a>
                                  </div>
                              </div>
@@ -159,15 +154,15 @@ $this->load->view('header');
                      <div class="col-lg-3 col-md-6 col-sm-6">
                          <div class="card card-stats">
                              <div class="card-header" data-background-color="rose">
-                                 <i class="material-icons">equalizer</i>
+                                 <i class="material-icons">location_on</i>
                              </div>
                              <div class="card-content">
                                  <p class="category">Lokasi</p>
-                                 <h3 class="card-title">75.521</h3>
+                                 <h3 class="card-title">5</h3>
                              </div>
                              <div class="card-footer">
                                  <div class="stats">
-                                     <i class="material-icons">local_offer</i>
+                                     <i class="material-icons">location_on</i>
                                      <a href="#pablo"> Lihat data...</a>
                                  </div>
                              </div>
@@ -184,7 +179,7 @@ $this->load->view('header');
                              </div>
                              <div class="card-footer">
                                  <div class="stats">
-                                     <i class="material-icons">date_range</i>
+                                     <i class="material-icons">store</i>
                                      <a href="#pablo"> Lihat data...</a>
                                  </div>
                              </div>
@@ -193,7 +188,7 @@ $this->load->view('header');
                      <div class="col-lg-3 col-md-6 col-sm-6">
                          <div class="card card-stats">
                              <div class="card-header" data-background-color="blue">
-                                 <i class="fa fa-twitter"></i>
+                                 <i class="material-icons">account_box</i>
                              </div>
                              <div class="card-content">
                                  <p class="category">User Terdaftar</p>
@@ -201,7 +196,7 @@ $this->load->view('header');
                              </div>
                              <div class="card-footer">
                                  <div class="stats">
-                                     <i class="material-icons">update</i>
+                                     <i class="material-icons">account_box</i>
                                      <a href="#pablo"> Lihat data...</a>
                                  </div>
                              </div>

@@ -74,6 +74,45 @@ class Itschilli extends CI_Controller
         $this->load->view('Vdaftar');
     }
   }
+  
+  public function menuHarga()
+  {
+    $datauser['dataharga'] = $this->model->getdata('harga');
+
+    $this->load->view('VHarga', $datauser);
+  }
+  
+  public function menuHargaEdit($idharga)
+  {
+    $where = array(
+    'idharga' => $idharga
+    );
+
+    if (null !== $this->input->post('edit')) {
+      $tgl = $this->input->post('tgl');
+    $id_jenis = $this->input->post('id_jenis');
+    $id_pasar = $this->input->post('id_pasar');
+    $harga = $this->input->post('harga');
+    $data = array(
+    'tgl' => $tgl,
+    'id_jenis' => $id_jenis,
+	'id_pasar' => $id_pasar,
+    'harga' => $harga,
+    );
+
+      $hasil = $this->Mchilli->updatedata("harga", $data, $where);
+      if($hasil){
+        redirect('itschilli/menuHarga');
+      }else{
+        echo "Gagal Update!";
+      }
+    }else {
+		$dataharga = $this->model->cekdata('harga',$where)->row();
+        //$datauser['datauser'] = $data -> result();
+        $this->load->view('VHargaedit', ['datauser'=>$dataharga, 'idharga'=>$idharga]);
+    }
+  }
+
 
   public function menuMUser()
   {

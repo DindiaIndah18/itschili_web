@@ -35,12 +35,44 @@
 <script src="<?php echo base_url() ?>assets/js/jasny-bootstrap.min.js"></script>
 <!--  Full Calendar Plugin    -->
 <script src="<?php echo base_url() ?>assets/js/fullcalendar.min.js"></script>
+
 <!-- TagsInput Plugin -->
 <script src="<?php echo base_url() ?>assets/js/jquery.tagsinput.js"></script>
 <!-- Material Dashboard javascript methods -->
 <script src="<?php echo base_url() ?>assets/js/material-dashboard.js"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url() ?>assets/js/demo.js"></script>
+<script src="<?php echo base_url() ?>/../assets/js/highcharts.js"></script>
+<script>
+Highcharts.chart('container', {
+  chart: {
+      type: 'line'
+  },
+  title: {
+      text: 'Grafik Harga Cabai Per Hari'
+  },
+  subtitle: {
+      text: 'Source:Survei Pasar'
+  },
+  xAxis: {
+      categories: <?php echo $tgl ?>
+  },
+  yAxis: {
+      title: {
+          text: 'Harga (Rp)'
+      }
+  },
+  plotOptions: {
+      line: {
+          dataLabels: {
+              enabled: true
+          },
+          enableMouseTracking: false
+      }
+  },
+  series: <?php echo $datas ?>
+});
+</script>
 <script type="text/javascript">
     $().ready(function() {
         demo.checkFullPageBackgroundImage();

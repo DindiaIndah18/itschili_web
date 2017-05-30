@@ -92,12 +92,17 @@ class Itschilli extends CI_Controller
       $tgl = $this->input->post('tgl');
     $id_jenis = $this->input->post('id_jenis');
     $id_pasar = $this->input->post('id_pasar');
-    $harga = $this->input->post('harga');
+    $harga = $this->input->post('id_harga');
     $data = array(
     'tgl' => $tgl,
     'id_jenis' => $id_jenis,
 	'id_pasar' => $id_pasar,
     'harga' => $harga,
+    );
+	
+	$where = array(
+    'idharga' => $idharga,
+	'id_pasar'=> $id_pasar
     );
 
       $hasil = $this->Mchilli->updatedata("harga", $data, $where);

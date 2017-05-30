@@ -124,11 +124,11 @@ $this->load->view('header');
                                  </div>
                                  <div class="form-group label-floating">
                                      <label class="control-label">Id Pasar</label>
-                                     <input type="text" class="form-control" disabled value="<?php echo $datauser->id_pasar; ?>" name="id_pasar">
+                                     <input type="text" class="form-control" disabled="" value="<?php echo $datauser->id_pasar; ?>" name="id_pasar">
                                  </div>
 								 <div class="form-group label-floating">
                                      <label class="control-label">Id Harga</label>
-                                     <input type="text" class="form-control" disabled value="<?php echo $datauser->idharga; ?>" name="id_harga">
+                                     <input type="text" class="form-control" disabled="" value="<?php echo $datauser->idharga; ?>" name="id_harga">
                                  </div>
                                    <div class="form-group label-floating">
                                        <label class="control-label">Harga</label>

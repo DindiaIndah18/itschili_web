@@ -49,7 +49,7 @@ $this->load->view('header');
                      </div>
                  </li>
                  <li>
-                     <a href="index.php/itschilli/menuHarga/">
+                     <a href="<?php echo base_url('index.php/itschilli/menuHarga') ?>">
                          <i class="material-icons">update</i>
                          <p>Update Harga</p>
                      </a>

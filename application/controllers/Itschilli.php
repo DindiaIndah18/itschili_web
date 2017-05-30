@@ -75,6 +75,31 @@ class Itschilli extends CI_Controller
     }
   }
   
+  public function menuTambahLokasi()
+{
+	
+	if (null !== $this->input->post('simpan')) {
+
+      $id_pasar = $this->input->post('id_pasar');
+      $nama_lokasi = $this->input->post('nama_lokasi');
+      $nama_pasar = $this->input->post('nama_pasar');
+      $data = array(
+      'nama_lokasi' => $nama_lokasi,
+      'nama_pasar' => $nama_pasar,
+      );
+
+      $hasil = $this->Mchilli->inputdata("pasar",$data);
+      if($hasil){
+        redirect('itschilli/menuTambahLokasi');
+      }else{
+        echo "Gagal mendaftar!";
+      }
+    }else {
+        $this->load->view('VLokasi');
+    }
+}
+
+  
   public function menuHarga()
   {
     $datauser['dataharga'] = $this->model->getdata('harga');
@@ -203,6 +228,7 @@ public function menuBeritaedit($idberita)
       //$datauser['datauser'] = $data -> result();
       $this->load->view('VBeritaedit',$databerita);
   }
+  
 }
 
 	public function logout(){

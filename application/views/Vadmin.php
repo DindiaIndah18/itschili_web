@@ -40,16 +40,13 @@ $this->load->view('header');
                                  <a href="./maps/google.html">Jenis Cabai</a>
                              </li>
                              <li>
-                                 <a href="./maps/fullscreen.html">Lokasi</a>
-                             </li>
-                             <li>
-                                 <a href="./maps/vector.html">Pasar</a>
+							<a href="<?php echo base_url('index.php/itschilli/menuTambahLokasi') ?>">Lokasi Pasar </a>
                              </li>
                          </ul>
                      </div>
                  </li>
                  <li>
-                     <a href="./charts.html">
+                     <a href="<?php echo base_url('index.php/itschilli/menuHarga') ?>">
                          <i class="material-icons">update</i>
                          <p>Update Harga</p>
                      </a>

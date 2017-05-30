@@ -74,6 +74,75 @@ class Itschilli extends CI_Controller
         $this->load->view('Vdaftar');
     }
   }
+  
+  public function menuTambahLokasi()
+{
+	
+	if (null !== $this->input->post('simpan')) {
+
+      $id_pasar = $this->input->post('id_pasar');
+      $nama_lokasi = $this->input->post('nama_lokasi');
+      $nama_pasar = $this->input->post('nama_pasar');
+      $data = array(
+      'nama_lokasi' => $nama_lokasi,
+      'nama_pasar' => $nama_pasar,
+      );
+
+      $hasil = $this->Mchilli->inputdata("pasar",$data);
+      if($hasil){
+        redirect('itschilli/menuTambahLokasi');
+      }else{
+        echo "Gagal mendaftar!";
+      }
+    }else {
+        $this->load->view('VLokasi');
+    }
+}
+
+  
+  public function menuHarga()
+  {
+    $datauser['dataharga'] = $this->model->getdata('harga');
+
+    $this->load->view('VHarga', $datauser);
+  }
+  
+  public function menuHargaEdit($idharga)
+  {
+    $where = array(
+    'idharga' => $idharga
+    );
+
+    if (null !== $this->input->post('edit')) {
+      $tgl = $this->input->post('tgl');
+    $id_jenis = $this->input->post('id_jenis');
+    $id_pasar = $this->input->post('id_pasar');
+    $harga = $this->input->post('id_harga');
+    $data = array(
+    'tgl' => $tgl,
+    'id_jenis' => $id_jenis,
+	'id_pasar' => $id_pasar,
+    'harga' => $harga,
+    );
+	
+	$where = array(
+    'idharga' => $idharga,
+	'id_pasar'=> $id_pasar
+    );
+
+      $hasil = $this->Mchilli->updatedata("harga", $data, $where);
+      if($hasil){
+        redirect('itschilli/menuHarga');
+      }else{
+        echo "Gagal Update!";
+      }
+    }else {
+		$dataharga = $this->model->cekdata('harga',$where)->row();
+        //$datauser['datauser'] = $data -> result();
+        $this->load->view('VHargaedit', ['datauser'=>$dataharga, 'idharga'=>$idharga]);
+    }
+  }
+
 
   public function menuMUser()
   {
@@ -159,6 +228,7 @@ public function menuBeritaedit($idberita)
       //$datauser['datauser'] = $data -> result();
       $this->load->view('VBeritaedit',$databerita);
   }
+  
 }
 
 	public function logout(){

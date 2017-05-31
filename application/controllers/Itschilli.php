@@ -161,18 +161,18 @@ class Itschilli extends CI_Controller
 	
 }
 
-public function menuEditLokasi($idpasar)
+public function menuEditLokasi($id_pasar)
 {
   $where = array(
-  'id_pasar' => $idpasar
+  'id_pasar' => $id_pasar
   );
 
   if (null !== $this->input->post('edit')) {
     $nama_pasar = $this->input->post('nama_pasar');
-    $nama_daerah = $this->input->post('nama_daerah');
+    $nama_lokasi = $this->input->post('nama_lokasi');
     $data = array(
     'nama_pasar' => $nama_pasar,
-    'nama_lokasi' => $nama_daerah,
+    'nama_lokasi' => $nama_lokasi,
     );
 
     $hasil = $this->Mchilli->updatedata("pasar", $data, $where);
@@ -307,6 +307,42 @@ public function delete($id)
   'id' => $id
   );
   $hasil = $this->Mchilli->deletedata("customer", $where);
+  redirect($_SERVER['HTTP_REFERER']);
+}
+
+public function deletepasar($id_pasar)
+{
+  $where = array(
+  'id_pasar' => $id_pasar
+  );
+  $hasil = $this->Mchilli->deletedata("pasar", $where);
+  redirect($_SERVER['HTTP_REFERER']);
+}
+
+public function deletejenis($id_jenis)
+{
+  $where = array(
+  'id_jenis' => $id_jenis
+  );
+  $hasil = $this->Mchilli->deletedata("jenis", $where);
+  redirect($_SERVER['HTTP_REFERER']);
+}
+
+public function deleteharga($idharga)
+{
+  $where = array(
+  'idharga' => $idharga
+  );
+  $hasil = $this->Mchilli->deletedata("harga", $where);
+  redirect($_SERVER['HTTP_REFERER']);
+}
+
+public function deleteberita($idberita)
+{
+  $where = array(
+  'idberita' => $idberita
+  );
+  $hasil = $this->Mchilli->deletedata("berita", $where);
   redirect($_SERVER['HTTP_REFERER']);
 }
 

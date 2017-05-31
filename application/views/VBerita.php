@@ -74,7 +74,7 @@ $this->load->view('header');
                                                   <td><?php echo $data->image;?></td>
                                                   <td class="text-right">
                                                       <a href="<?php echo base_url('index.php/itschilli/menuBeritaedit/'.$data->idberita); ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="material-icons">dvr</i></a>
-                                                      <a href="<?php echo base_url('index.php/itschilli/delete/'.$data->idberita); ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
+                                                      <a href="<?php echo base_url('index.php/itschilli/deleteberita/'.$data->idberita); ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
                                                   </td>
                                               </tr>
                                               <?php } ?>

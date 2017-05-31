@@ -117,6 +117,7 @@ class Itschilli extends CI_Controller
       $id_jenis = $this->input->post('id_jenis');
       $nama_jenis = $this->input->post('nama_jenis');
       $data = array(
+	  'id_jenis' => $id_jenis,
       'nama_jenis' => $nama_jenis,
       );
 
@@ -425,4 +426,4 @@ public function menuBeritaedit($idberita)
     $this->load->view('Vperkembangan', $datalokasi);
   }
 }
- ?>
+ ?>                        

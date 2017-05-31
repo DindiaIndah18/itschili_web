@@ -23,7 +23,11 @@ class Itschilli extends CI_Controller
     if($this->session->userdata('status') != "login"){
 			$this->load->view('Vlogin');
     }else {
-      $this->load->view('Vadmin');
+      $hasil['customer'] = $this->Mchilli->getBanyak("customer");
+      $hasil['jenis'] = $this->Mchilli->getBanyak("jenis");
+      $hasil['pasar'] = $this->Mchilli->getBanyak("pasar");
+      $hasil['berita'] = $this->Mchilli->getBanyak("berita");
+      $this->load->view('Vadmin', $hasil);
     }
   }
 
@@ -74,10 +78,10 @@ class Itschilli extends CI_Controller
         $this->load->view('Vdaftar');
     }
   }
-  
+
   public function menuTambahLokasi()
 {
-	
+
 	if (null !== $this->input->post('simpan')) {
 
       $id_pasar = $this->input->post('id_pasar');
@@ -99,14 +103,14 @@ class Itschilli extends CI_Controller
     }
 }
 
-  
+
   public function menuHarga()
   {
     $datauser['dataharga'] = $this->model->getdata('harga');
 
     $this->load->view('VHarga', $datauser);
   }
-  
+
   public function menuHargaEdit($idharga)
   {
     $where = array(
@@ -124,7 +128,7 @@ class Itschilli extends CI_Controller
 	'id_pasar' => $id_pasar,
     'harga' => $harga,
     );
-	
+
 	$where = array(
     'idharga' => $idharga,
 	'id_pasar'=> $id_pasar
@@ -228,7 +232,7 @@ public function menuBeritaedit($idberita)
       //$datauser['datauser'] = $data -> result();
       $this->load->view('VBeritaedit',$databerita);
   }
-  
+
 }
 
 	public function logout(){

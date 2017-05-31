@@ -1,3 +1,16 @@
+<footer class="footer">
+    <div class="container-fluid">
+        <p class="copyright pull-right">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            <a href="">Its Chilli Dev</a>, made with love for a better live
+        </p>
+    </div>
+</footer>
+</div>
+</div>
 </body>
 <!--   Core JS Files   -->
 <script src="<?php echo base_url() ?>assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>

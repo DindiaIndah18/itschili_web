@@ -3,11 +3,10 @@ $this->load->view('header');
  ?>
 
  <div class="wrapper">
-        <?php
-   $isactive = ['sjenis'=>'true'];
+   <?php
+   $isactive = ['sdatamaster'=>'true'];
    $this->load->view('sidebar', $isactive);
     ?>
-
      <div class="main-panel">
          <nav class="navbar navbar-transparent navbar-absolute">
              <div class="container-fluid">
@@ -38,18 +37,18 @@ $this->load->view('header');
                                <i class="material-icons">mail_outline</i>
                            </div>
                            <div class="card-content">
-                               <h4 class="card-title">Edit User</h4>
-                               <form method="post" action="<?php echo base_url('index.php/itschilli/menuJenisCabaiEdit/'.$datajenis->id_jenis); ?>">
+                               <h4 class="card-title">Tambah Jenis</h4>
+                               <form method="post" action="<?php echo base_url('index.php/itschilli/menuTambahJenis/'); ?>">
 
-                                 <div class="form-group label-floating">
-                                     <label class="control-label">Id Jenis Cabai</label>
-                                     <input type="text" class="form-control" disabled="" value="<?php echo $datajenis->id_jenis; ?>">
+								<div class="form-group label-floating">
+                                     <label class="control-label">ID Jenis</label>
+                                     <input type="text" class="form-control" name="id_jenis">
                                  </div>
                                  <div class="form-group label-floating">
-                                     <label class="control-label">Nama Jenis Cabai</label>
-                                     <input type="text" class="form-control" value="<?php echo $datajenis->nama_jenis; ?>" name="nama_jenis">
+                                     <label class="control-label">Nama Jenis</label>
+                                     <input type="text" class="form-control" name="nama_jenis">
                                  </div>
-                                   <button type="submit" class="btn btn-fill btn-success" name="edit">Update</button>
+                                   <button type="submit" class="btn btn-fill btn-success" name="simpan">Tambah</button>
                                    <a class="btn btn-fill btn-rose" onclick="window.history.go(-1); return false;">Batal</a>
                                </form>
                            </div>
@@ -60,6 +59,7 @@ $this->load->view('header');
                   <!-- end row -->
              </div>
          </div>
+
 <?php
      $this->load->view('footer');
 ?>

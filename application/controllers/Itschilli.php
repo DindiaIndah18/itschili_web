@@ -109,11 +109,35 @@ class Itschilli extends CI_Controller
 	}
   }
   
+<<<<<<< HEAD
+  public function menuTambahJenis()
+{
+
+	if (null !== $this->input->post('simpan')) {
+
+      $id_jenis = $this->input->post('id_jenis');
+      $nama_jenis = $this->input->post('nama_jenis');
+      $data = array(
+      'nama_jenis' => $nama_jenis,
+      );
+
+      $hasil = $this->Mchilli->inputdata("jenis",$data);
+      if($hasil){
+        redirect('itschilli/menuJenisCabai');
+      }else{
+        echo "Gagal mendaftar!";
+      }
+    }else {
+		$this->load->view('Vjenistambah');
+    }
+}
+=======
   public function menuLokasi()
   {
     $datalokasi['datalokasi'] = $this->model->getdata('pasar');
     $this->load->view('VLokasi', $datalokasi);
   }
+>>>>>>> ac35ef300a1d8cf9955c8f711e38d57d0b3a8038
 
   public function menuTambahLokasi()
 {

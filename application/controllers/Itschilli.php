@@ -109,6 +109,27 @@ class Itschilli extends CI_Controller
 	}
   }
   
+  public function menuTambahJenis()
+{
+
+	if (null !== $this->input->post('simpan')) {
+
+      $id_jenis = $this->input->post('id_jenis');
+      $nama_jenis = $this->input->post('nama_jenis');
+      $data = array(
+      'nama_jenis' => $nama_jenis,
+      );
+
+      $hasil = $this->Mchilli->inputdata("jenis",$data);
+      if($hasil){
+        redirect('itschilli/menuJenisCabai');
+      }else{
+        echo "Gagal mendaftar!";
+      }
+    }else {
+		$this->load->view('Vjenistambah');
+    }
+}
   public function menuLokasi()
   {
     $datalokasi['datalokasi'] = $this->model->getdata('pasar');
@@ -186,17 +207,16 @@ public function menuEditLokasi($idpasar)
       $tgl = $this->input->post('tgl');
     $id_jenis = $this->input->post('id_jenis');
     $id_pasar = $this->input->post('id_pasar');
-    $harga = $this->input->post('id_harga');
+    $harga = $this->input->post('harga');
     $data = array(
     'tgl' => $tgl,
     'id_jenis' => $id_jenis,
 	'id_pasar' => $id_pasar,
-    'harga' => $harga,
+    'harga' => $harga
     );
 
 	$where = array(
-    'idharga' => $idharga,
-	'id_pasar'=> $id_pasar
+    'idharga' => $idharga
     );
 
       $hasil = $this->Mchilli->updatedata("harga", $data, $where);

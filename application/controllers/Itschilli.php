@@ -196,6 +196,34 @@ public function menuEditLokasi($idpasar)
 
     $this->load->view('VHarga', $datauser);
   }
+  
+public function menuTambahHarga()
+{
+
+	if (null !== $this->input->post('simpan')) {
+
+      $tgl = $this->input->post('tgl');
+      $id_jenis = $this->input->post('id_jenis');
+      $id_pasar = $this->input->post('id_pasar');
+	  $harga = $this->input->post('harga');
+      $data = array(
+      'tgl' => $tgl,
+      'id_jenis' => $id_jenis,
+	  'id_pasar' => $id_pasar,
+      'harga' => $harga,
+      );
+
+      $hasil = $this->Mchilli->inputdata("harga",$data);
+      if($hasil){
+        redirect('itschilli/menuHarga');
+      }else{
+        echo "Gagal menginputkan!";
+      }
+    }else {
+        $this->load->view('THarga');
+    }
+	
+}
 
   public function menuHargaEdit($idharga)
   {

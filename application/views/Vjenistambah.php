@@ -23,7 +23,7 @@ $this->load->view('header');
                          <span class="icon-bar"></span>
                          <span class="icon-bar"></span>
                      </button>
-                     <a class="navbar-brand" href="#"> Dashboard </a>
+                     <a class="navbar-brand" href="#"> Jenis Cabai </a>
                  </div>
 
              </div>
@@ -37,7 +37,7 @@ $this->load->view('header');
                                <i class="material-icons">mail_outline</i>
                            </div>
                            <div class="card-content">
-                               <h4 class="card-title">Tambah Customer</h4>
+                               <h4 class="card-title">Tambah Jenis</h4>
                                <form method="post" action="<?php echo base_url('index.php/itschilli/menuTambahJenis'); ?>">
 
 

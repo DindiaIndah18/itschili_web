@@ -65,10 +65,16 @@ $this->load->view('header');
                                                   <td><?php echo $data->id_jenis;?></td>
                                                   <td><?php echo $data->nama_jenis;?></td>
                                                   <td class="text-right">
+<<<<<<< HEAD
 
                                                       <a href="<?php echo base_url('index.php/itschilli/menuJenisCabai/'.$data->id_jenis); ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="material-icons">dvr</i></a>
                                                       <a href="<?php echo base_url('index.php/itschilli/deletejeniscabai/'.$data->id_jenis); ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
 
+=======
+                                                      <a href="<?php echo base_url('index.php/itschilli/menuJenisCabaiEdit/'.$data->id_jenis); ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="material-icons">dvr</i></a>
+                                                      <a href="<?php echo base_url('index.php/itschilli/deletejenis/'.$data->id_jenis); ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
+                                                      
+>>>>>>> 01bd99ec2e3a7f60064e7956184d807d3285d6a0
                                                   </td>
                                               </tr>
                                               <?php } ?>

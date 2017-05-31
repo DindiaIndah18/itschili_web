@@ -219,6 +219,36 @@ public function menuEditLokasi($idpasar)
 
     $this->load->view('VMUser', $datauser);
   }
+  
+  public function menuTambahMUser()
+{
+
+	if (null !== $this->input->post('simpan')) {
+
+      $id = $this->input->post('id');
+      $nama = $this->input->post('nama');
+      $email = $this->input->post('email');
+	  $no_telp = $this->input->post('no_telp');
+	  $pass = md5($this->input->post('pass'));
+      $data = array(
+      'id' => $id,
+      'nama' => $nama,
+	  'email' => $email,
+      'no_telp' => $no_telp,
+	  'pass' => $pass,
+      );
+
+      $hasil = $this->Mchilli->inputdata("customer",$data);
+      if($hasil){
+        redirect('itschilli/menuMUser');
+      }else{
+        echo "Gagal menginputkan!";
+      }
+    }else {
+        $this->load->view('TMUser');
+    }
+	
+}
 
   public function menuMUserEdit($id)
   {
@@ -264,6 +294,38 @@ public function menuBerita()
 {
   $datauser['databerita'] = $this->model->getdata('berita');
   $this->load->view('VBerita',$datauser);
+}
+
+  public function menuTambahBerita()
+{
+
+	if (null !== $this->input->post('simpan')) {
+
+      $idberita = $this->input->post('idberita');
+      $judulBerita = $this->input->post('judulBerita');
+      $deskBerita = $this->input->post('deskBerita');
+	  $date = $this->input->post('date');
+	  $link = $this->input->post('link');
+	  $image = $this->input->post('image');
+      $data = array(
+      'idberita' => $id_berita,
+      'judulBerita' => $judulBerita,
+	  'deskBerita' => $deskBerita,
+      'date' => $date,
+	  'link' => $link,
+	  'image' => $image,
+      );
+
+      $hasil = $this->Mchilli->inputdata("berita",$data);
+      if($hasil){
+        redirect('itschilli/menuBerita');
+      }else{
+        echo "Gagal menginputkan!";
+      }
+    }else {
+        $this->load->view('TBerita');
+    }
+	
 }
 
 public function menuBeritaedit($idberita)

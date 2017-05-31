@@ -37,7 +37,7 @@ $this->load->view('header');
                                   <i class="material-icons">assignment</i>
                               </div>
                               <div class="card-content">
-                                  <h4 class="card-title">Berita<a href="" class="btn btn-primary btn-simple">Tambah Berita</a></h4>
+                                  <h4 class="card-title">Berita<a href="<?php echo base_url('index.php/itschilli/menuTambahBerita'); ?>" class="btn btn-primary btn-simple">Tambah Berita</a></h4>
                                   <div class="toolbar">
                                       <!--        Here you can write extra buttons/actions for the toolbar              -->
                                   </div>

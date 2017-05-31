@@ -117,6 +117,7 @@ class Itschilli extends CI_Controller
       $id_jenis = $this->input->post('id_jenis');
       $nama_jenis = $this->input->post('nama_jenis');
       $data = array(
+	  'id_jenis' => $id_jenis,
       'nama_jenis' => $nama_jenis,
       );
 
@@ -196,6 +197,34 @@ public function menuEditLokasi($id_pasar)
 
     $this->load->view('VHarga', $datauser);
   }
+  
+public function menuTambahHarga()
+{
+
+	if (null !== $this->input->post('simpan')) {
+
+      $tgl = $this->input->post('tgl');
+      $id_jenis = $this->input->post('id_jenis');
+      $id_pasar = $this->input->post('id_pasar');
+	  $harga = $this->input->post('harga');
+      $data = array(
+      'tgl' => $tgl,
+      'id_jenis' => $id_jenis,
+	  'id_pasar' => $id_pasar,
+      'harga' => $harga,
+      );
+
+      $hasil = $this->Mchilli->inputdata("harga",$data);
+      if($hasil){
+        redirect('itschilli/menuHarga');
+      }else{
+        echo "Gagal menginputkan!";
+      }
+    }else {
+        $this->load->view('THarga');
+    }
+	
+}
 
   public function menuHargaEdit($idharga)
   {
@@ -461,4 +490,4 @@ public function menuBeritaedit($idberita)
     $this->load->view('Vperkembangan', $datalokasi);
   }
 }
- ?>
+ ?>                        

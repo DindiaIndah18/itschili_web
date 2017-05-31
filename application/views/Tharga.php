@@ -37,18 +37,26 @@ $this->load->view('header');
                                <i class="material-icons">mail_outline</i>
                            </div>
                            <div class="card-content">
-                               <h4 class="card-title">Tambah Customer</h4>
-                               <form method="post" action="<?php echo base_url('index.php/itschilli/menuTambahJenis'); ?>">
+                               <h4 class="card-title">Tambah Data Harga</h4>
+                               <form method="post" action="<?php echo base_url('index.php/itschilli/menuTambahHarga'); ?>">
 
 
                                  <div class="form-group label-floating">
-                                     <label class="control-label">ID Jenis</label>
+                                     <label class="control-label">Tanggal</label>
+                                     <input type="date" class="form-control" name="tgl">
+                                 </div>
+                                 <div class="form-group label-floating">
+                                     <label class="control-label">Id Jenis</label>
                                      <input type="text" class="form-control" name="id_jenis">
-                                 </div> 
+                                 </div>
 								 <div class="form-group label-floating">
-                                     <label class="control-label">Nama Jenis</label>
-                                     <input type="text" class="form-control" name="nama_jenis">
-                                 </div>                              
+                                     <label class="control-label">Id Pasar</label>
+                                     <input type="text" class="form-control" name="id_pasar">
+                                 </div>
+								 <div class="form-group label-floating">
+                                     <label class="control-label">Harga</label>
+                                     <input type="text" class="form-control" name="harga">
+                                 </div>
                                    <button type="submit" class="btn btn-fill btn-success" name="simpan">Tambah</button>
                                    <a class="btn btn-fill btn-rose" onclick="window.history.go(-1); return false;">Batal</a>
                                </form>

@@ -73,7 +73,7 @@ $this->load->view('header');
                                                   <td><?php echo $data->nama_lokasi;?></td>
                                                   <td class="text-right">
                                                       <a href="<?php echo base_url('index.php/itschilli/menuEditLokasi/'.$data->id_pasar); ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="material-icons">dvr</i></a>
-                                                      <a href="<?php echo base_url('index.php/itschilli/delete/'.$data->id_pasar); ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
+                                                      <a href="<?php echo base_url('index.php/itschilli/deletepasar/'.$data->id_pasar); ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
                                                   </td>
                                               </tr>
                                               <?php } ?>

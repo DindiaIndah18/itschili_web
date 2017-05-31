@@ -31,7 +31,7 @@ Tip 3: you can change the color of the sidebar with data-background-color="white
                 </a>
                 <div class="collapse" id="mapsExamples">
                     <ul class="nav">
-                        <li>
+                        <li class="<?php if(isset($sjenis)){echo "active";}?>">
                             <a href="<?php echo base_url('index.php/itschilli/menuJenisCabai') ?>">Jenis Cabai</a>
                         </li>
                         <li>

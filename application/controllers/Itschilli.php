@@ -109,6 +109,7 @@ class Itschilli extends CI_Controller
 	}
   }
   
+<<<<<<< HEAD
   public function menuTambahJenis()
 {
 
@@ -130,6 +131,13 @@ class Itschilli extends CI_Controller
 		$this->load->view('Vjenistambah');
     }
 }
+=======
+  public function menuLokasi()
+  {
+    $datalokasi['datalokasi'] = $this->model->getdata('pasar');
+    $this->load->view('VLokasi', $datalokasi);
+  }
+>>>>>>> ac35ef300a1d8cf9955c8f711e38d57d0b3a8038
 
   public function menuTambahLokasi()
 {
@@ -146,13 +154,42 @@ class Itschilli extends CI_Controller
 
       $hasil = $this->Mchilli->inputdata("pasar",$data);
       if($hasil){
-        redirect('itschilli/menuTambahLokasi');
+        redirect('itschilli/menuLokasi');
       }else{
         echo "Gagal mendaftar!";
       }
     }else {
-        $this->load->view('VLokasi');
+        $this->load->view('TLokasi');
     }
+	
+}
+
+public function menuEditLokasi($idpasar)
+{
+  $where = array(
+  'id_pasar' => $idpasar
+  );
+
+  if (null !== $this->input->post('edit')) {
+    $nama_pasar = $this->input->post('nama_pasar');
+    $nama_daerah = $this->input->post('nama_daerah');
+    $data = array(
+    'nama_pasar' => $nama_pasar,
+    'nama_lokasi' => $nama_daerah,
+    );
+
+    $hasil = $this->Mchilli->updatedata("pasar", $data, $where);
+    if($hasil){
+      redirect('itschilli/menuLokasi');
+    }else{
+      echo "Gagal Update!";
+    }
+  } else {
+    $datalokasi['datalokasi'] = $this->model->cekdata('pasar',$where)->row();
+     // $datauser1['datauser'] = $data -> result();
+      $this->load->view('VLokasiedit',$datalokasi);
+  }
+
 }
 
 

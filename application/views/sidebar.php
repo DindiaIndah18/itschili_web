@@ -35,7 +35,7 @@ Tip 3: you can change the color of the sidebar with data-background-color="white
                             <a href="<?php echo base_url('index.php/itschilli/menuJenisCabai') ?>">Jenis Cabai</a>
                         </li>
                         <li>
-         <a href="<?php echo base_url('index.php/itschilli/menuTambahLokasi') ?>">Lokasi Pasar </a>
+         <a href="<?php echo base_url('index.php/itschilli/menuLokasi') ?>">Lokasi Pasar </a>
                         </li>
                     </ul>
                 </div>

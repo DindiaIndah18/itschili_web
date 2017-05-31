@@ -452,6 +452,7 @@ public function menuBeritaedit($idberita)
     $datalokasi['datalokasi'] = $this->model->getdata('pasar');
 
     $this->load->view('Vperkembangan', $datalokasi);
+	//$this->load->view('coba', $datalokasi);
   }
 }
  ?>                        

@@ -128,7 +128,7 @@ $this->load->view('header');
                                  </div>
                                    <div class="form-group label-floating">
                                        <label class="control-label">Tanggal Terbit</label>
-                                       <input type="text" class="form-control" value="<?php echo $databerita->date; ?>" name="date">
+                                       <input type="date" class="form-control" value="<?php echo $databerita->date; ?>" name="date">
                                    </div>
                                    <div class="form-group label-floating">
                                        <label class="control-label">Link</label>

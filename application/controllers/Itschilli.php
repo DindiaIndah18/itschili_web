@@ -93,7 +93,6 @@ class Itschilli extends CI_Controller
     if (null !== $this->input->post('edit')) {
       $nama_jenis = $this->input->post('nama_jenis');
       $data = array(
-	  'id_jenis' => $id_jenis,
       'nama_jenis' => $nama_jenis,
       );
 

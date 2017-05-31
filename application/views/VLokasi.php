@@ -4,7 +4,7 @@ $this->load->view('header');
 
  <div class="wrapper">
    <?php
-   $isactive = ['sdatamaster'=>'true'];
+   $isactive = ['sberita'=>'true'];
    $this->load->view('sidebar', $isactive);
     ?>
      <div class="main-panel">
@@ -31,37 +31,65 @@ $this->load->view('header');
          <div class="content">
              <div class="container-fluid">
                <div class="row">
-                 <div class="col-md-6">
-                       <div class="card">
-                           <div class="card-header card-header-icon" data-background-color="rose">
-                               <i class="material-icons">mail_outline</i>
-                           </div>
-                           <div class="card-content">
-                               <h4 class="card-title">Tambah Lokasi</h4>
-                               <form method="post" action="<?php echo base_url('index.php/itschilli/menuTambahLokasi/'); ?>">
-
-
-                                 <div class="form-group label-floating">
-                                     <label class="control-label">Nama Pasar</label>
-                                     <input type="text" class="form-control" name="nama_pasar">
-                                 </div>
-                                 <div class="form-group label-floating">
-                                     <label class="control-label">Nama Lokasi</label>
-                                     <input type="text" class="form-control" name="nama_lokasi">
-                                 </div>
-
-                                   <button type="submit" class="btn btn-fill btn-success" name="simpan">Tambah</button>
-                                   <a class="btn btn-fill btn-rose" onclick="window.history.go(-1); return false;">Batal</a>
-                               </form>
-                           </div>
-                       </div>
-                   </div>
+                      <div class="col-md-12">
+                          <div class="card">
+                              <div class="card-header card-header-icon" data-background-color="purple">
+                                  <i class="material-icons">assignment</i>
+                              </div>
+                              <div class="card-content">
+                                  <h4 class="card-title">Lokasi<a href="<?php echo base_url('index.php/itschilli/menuTambahLokasi'); ?>" class="btn btn-primary btn-simple">Tambah Lokasi</a></h4>
+                                  <div class="toolbar">
+                                      <!--        Here you can write extra buttons/actions for the toolbar              -->
+                                  </div>
+                                  <div class="material-datatables">
+                                      <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                          <thead>
+                                              <tr>
+                                                <th>No</th>
+                                                  <th>Nama Pasar</th>
+                                                  <th>Nama Lokasi</th>
+                                                  
+                                                  <th class="disabled-sorting text-right">Actions</th>
+                                              </tr>
+                                          </thead>
+                                          <tfoot>
+                                              <tr>
+                                                <th>No</th>
+                                                  <th>Nama Pasar</th>
+                                                  <th>Nama Lokasi</th>
+                                                  
+                                                  <th class="text-right">Actions</th>
+                                              </tr>
+                                          </tfoot>
+                                          <tbody>
+                                            <?php
+                                            $hitung=0;
+                                             foreach ($datalokasi as $data) {
+                                               $hitung++;
+                                             ?>
+                                              <tr>
+                                                  <td><?php echo $hitung; ?></td>
+                                                  <td><?php echo $data->nama_pasar;?></td>
+                                                  <td><?php echo $data->nama_lokasi;?></td>
+                                                  <td class="text-right">
+                                                      <a href="<?php echo base_url('index.php/itschilli/menuEditLokasi/'.$data->id_pasar); ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="material-icons">dvr</i></a>
+                                                      <a href="<?php echo base_url('index.php/itschilli/delete/'.$data->id_pasar); ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
+                                                  </td>
+                                              </tr>
+                                              <?php } ?>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                              <!-- end content-->
+                          </div>
+                          <!--  end card  -->
+                      </div>
                       <!-- end col-md-12 -->
                   </div>
                   <!-- end row -->
              </div>
          </div>
-
 <?php
      $this->load->view('footer');
 ?>

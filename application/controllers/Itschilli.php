@@ -348,7 +348,7 @@ public function deletepasar($id_pasar)
   redirect($_SERVER['HTTP_REFERER']);
 }
 
-public function deletejenis($id_jenis)
+public function deletejeniscabai($id_jenis)
 {
   $where = array(
   'id_jenis' => $id_jenis

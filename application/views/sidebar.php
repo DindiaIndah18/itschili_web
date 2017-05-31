@@ -32,7 +32,7 @@ Tip 3: you can change the color of the sidebar with data-background-color="white
                 <div class="collapse" id="mapsExamples">
                     <ul class="nav">
                         <li>
-                            <a href="./maps/google.html">Jenis Cabai</a>
+                            <a href="<?php echo base_url('index.php/itschilli/menuJenisCabai') ?>">Jenis Cabai</a>
                         </li>
                         <li>
          <a href="<?php echo base_url('index.php/itschilli/menuTambahLokasi') ?>">Lokasi Pasar </a>

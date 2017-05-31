@@ -78,6 +78,36 @@ class Itschilli extends CI_Controller
         $this->load->view('Vdaftar');
     }
   }
+  
+  public function menuJenisCabai()
+  {
+	  $datauser['datajenis'] = $this->model->getdata('jenis');
+	  $this->load->view('Vjenis', $datauser);
+  }
+  public function menuJenisCabaiEdit($id_jenis)
+  {
+    $where = array(
+    'id_jenis' => $id_jenis
+    );
+
+    if (null !== $this->input->post('edit')) {
+      $nama_jenis = $this->input->post('nama_jenis');
+      $data = array(
+      'nama_jenis' => $nama_jenis,
+      );
+
+      $hasil = $this->Mchilli->updatedata("jenis", $data, $where);
+      if($hasil){
+        redirect('itschilli/menuJenisCabai');
+		}else{
+        echo "Gagal Update!";
+      }
+    }else {
+      $datajenis['datajenis'] = $this->model->cekdata('jenis',$where)->row();
+        //$datauser['datauser'] = $data -> result();
+        $this->load->view('Vjenisedit',$datajenis);
+	}
+  }
 
   public function menuTambahLokasi()
 {
